@@ -1,11 +1,23 @@
-# OS Generated
+/node_modules
+/node_modules*
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# OS Generated #
+################
 .DS_Store*
 thumbs.db
 ehthumbs.db
 Icon?
 Thumbs.db
 *.swp
+._*
+.Spotlight-V100
+.Trashes
 
-### Source Maps ###
+# Source Maps #
+###############
 *.css.map
 *.js.map
+
