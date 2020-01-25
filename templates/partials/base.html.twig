@@ -10,11 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://images/logo.png') }}" />
+    <link rel="icon" type="image/png" href="{{ url('theme://dist/images/logo.png') }}" />
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
-        {% do assets.addCss('theme://dist/css/modulus.css', 98) %}
+        {% do assets.addCss('theme://css/modulus.css', 98) %}
     {% endblock %}
     {{ assets.css() }}
 
