@@ -19,13 +19,18 @@
     {{ assets.css() }}
 
     {% block javascripts %}
-        {% do assets.addJs('jquery', 100) %}
+      {% do assets.addCss('theme://js/modulus.js', 99) %}
+        <!--{% do assets.addJs('jquery', 100) %}-->
     {% endblock %}
     {{ assets.js() }}
 
 {% endblock head%}
 </head>
 <body id="top" class="{{ page.header.body_classes }}">
+
+{% block panel %}
+  {% include 'components/panel.html.twig' %}
+{% endblock %}
 
 {% block header %}
     <div class="header">

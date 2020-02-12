@@ -1,0 +1,37 @@
+<div class="panel" data-js="panel">
+
+    <div class="panel-handle">
+        <div data-js="panel-toggle" type="button" aria-label="Menu" aria-controls="navigation" aria-expanded="false">
+        </div>
+        {# include 'partials/nav-inpage.html.twig' #}
+    </div>
+
+    <div class="panel-tray">
+        <div class="panel__close">
+        <a data-js="panel-close">
+            <svg width="20" height="20" viewBox="0 0 20 20">
+                    <path d="M14.528,20c-0.242,0 -0.484,-0.092 -0.668,-0.277l-9.056,-9.055c-0.369,-0.369 -0.369,-0.967 0,-1.336l9.056,-9.055c0.369,-0.369 0.966,-0.369 1.336,0c0.369,0.368 0.369,0.967 0,1.336l-8.388,8.387l8.388,8.387c0.369,0.369 0.369,0.967 0,1.336c-0.185,0.185 -0.427,0.277 -0.668,0.277Z"/>
+            </svg>
+            <span>Close Navigation</span>
+        </a>
+        </div>
+        <nav>
+            {# <ul class="navigation">
+                <li><a href="#" class="is-active" title="Home">Home</a></li>
+                <li class="folder">Partners:
+                    <ul>
+                        <li><a href="#" title="Vinya">Viña Association</a></li>
+                        <li><a href="#" title="Ethnic Radio">Ethnic Radio</a></li>
+                        <li><a href="#" title="ILMAV">ILMAV</a></li>
+                        <li><a href="#" title="FDPM">FDPM</a></li>
+                    </ul>
+                <li>
+            </ul> #}
+            {# include 'partials/nav-site.html.twig' #}
+        </nav>
+
+        <div class="footnote">
+            <p>Learn about any of our ministry partners by selecting them from above.</p>
+        </div>
+    </div>
+</div>

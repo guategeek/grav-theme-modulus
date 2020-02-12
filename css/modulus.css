@@ -1,1 +1,9 @@
+@import "destyle.css";
+@import "variables.css";
 /* Welcome to the Modulus theme */
+@import "components/panel.css";
+/* Base Styles */
+
+body {
+  background: var(--background-color);
+}

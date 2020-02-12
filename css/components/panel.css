@@ -1,0 +1,126 @@
+/* Variables you can set
+
+--panel-width: 250px; // How wide will the inside portion of the pannel be?
+--panel-handle-width: 50px; // How wide will the in page nav be?
+--panel-tray-padding: 2em;
+--panel-close-size: 50px; // Size of the "Close Nav" button inside the pannel
+--panel-close-color: $gray-dark; // Color of the "Close Nav" text inside pannel
+// In Page Nav (uses bookmark class on items)
+--panel-bookmark-height: 50px; // How tall is each in page nav item?
+--panel-bookmark-items: 6; // The max number of bookmark items
+// Handle Highlight goes in page under the inpage nav
+--pannel-highlight-size: 5px; // The triangle will be twice this size.
+--pannel-highlight-color: $green-mid; // THe triangle will be this color.
+--panel-highlight-background: lighten($off-black, 5%);
+--panel-highlight-baseoffset: 15px; // I want the arrow to line up with the divider element
+*/
+
+
+body {
+  position: relative;
+  right: 0px;
+  overflow-x: hidden;
+  transition: right 0.3s ease-in-out;
+}
+body.is-panel-open{
+  right: calc(- var(--panel-width, 250px));
+}
+
+.panel {
+  font-size: 12px;
+  position: fixed;
+  /* left:  calc(var(--panel-width, 250px) * -1); */
+  top: 0px;
+  width: calc( var(--panel-width) + var(--panel-handle-width));
+  height: 100vh;
+  transition: left 0.3s ease-in-out;
+  z-index: 10;
+  background: orange;
+}
+.panel.panel_is-open{
+  left: 0px;
+}
+.panel p {
+  padding: 1em;
+  color: rgb(242, 242, 243);
+}
+
+.panel__handle {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: var(--panel-handle-width, 50px);
+  min-height: 50px;
+  /* 
+  Rather than setting a background here (easy)
+  I have set it to handle-highlight below, which lives in the page with sticky nav indicators
+  */
+}
+.panel__tray {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: var(--panel-width, 250px);
+  height: 100vh;
+  background: var(--off-black, black);
+  padding: var(--panel-close-size, 50px) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em);
+  border-right: 1px solid var(--off-black, black);
+  overflow-y: scroll;
+}
+
+.panel__close {
+  position: absolute;
+  top: 0px;
+  left: var(--panel-tray-padding, 2em);
+  right: 0px;
+  height: var(--panel-close-size, 50px);
+  display: flex;
+  align-items: center;
+}
+.panel__close   a{
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: var(--panel-close-color, grey);
+  fill: var(--panel-close-color, grey);
+}
+.panel__close a:hover{
+  color: var(--green-light, green);
+  fill: var(--green-light, green);
+}
+/* This is put in all the layouts so that I can highlight inpage navigation with a cool little indicator. */   
+.handle-highlight {
+  grid-column: left-start / left-end;
+  grid-row: 1 / -1;
+  background: var(--panel-highlight-background, gray);
+  border-left: 1px solid var(--off-black, gray);
+  z-index: 1;
+}
+.bookmark-highlight {
+  position: sticky;
+  top: calc( var(--panel-bookmark-height, 50px) + ( var(--panel-bookmark-height, 50px) / 2) - var(--pannel-highlight-size, 5px));
+  margin: var(--panel-highlight-baseoffset, 15px) 0;
+  border-top: var(--pannel-highlight-size, 5px) solid transparent;
+  border-bottom: var(--pannel-highlight-size, 5px) solid transparent;
+  border-left: var(--pannel-highlight-size, 5px) solid var(--pannel-highlight-color, green); /* rgba($orange-light,0.5)  Make the arrow half transperant */
+}
+/* Temporary Hamgerger placement */
+.hamburger-box {
+  width: 50px;
+  height: 50px;
+  background: blue;
+}
+
+
+/* Site relies on sections only being used for layout,
+// thats how it figures out the in page navigatin highlighting
+// I use this for loop to create enough pesudo classes for the number of items in the nav set in the variable.
+
+
+section
+  @for $i from 2 through $panel-bookmark-items
+    &:nth-of-type(#{$i})
+      .bookmark-highlight
+        top: ($panel-bookmark-height * $i) + ($panel-bookmark-height / 2) - $pannel-highlight-size
+
+*/
