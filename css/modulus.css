@@ -1,9 +1,20 @@
-@import "destyle.css";
-@import "variables.css";
-/* Welcome to the Modulus theme */
-@import "components/panel.css";
-/* Base Styles */
+@import "partials/destyle.css";
+@import "partials/variables.css";
+@import "partials/fonts.css";
+/* If you are using a theme to change the look load it here */
 
-body {
-  background: var(--background-color);
-}
+
+/* Base theme styles are imported here  */
+@import "partials/baseStyles.css";
+/* Components are loaded here, coment out any component you don't want */
+@import "components/panel.css";
+
+
+
+/*   Welcome to the Modulus GravCMS theme!
+**
+**  The theme plays with using modular pages in Grav, and even alows hacks like moduls having submodules (think of it as two layers of modular pages)
+**
+**  Components: are Single items that can be used on the page, such as a module, navigation and so on.
+**  Themes: are a set of variable overides to change the look of the site or component (aka so different sites have their own colors and styles)
+*/

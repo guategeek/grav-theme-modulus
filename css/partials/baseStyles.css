@@ -1,0 +1,111 @@
+/* Base Styles */
+:root{
+    /* I'm using Vertical Rythem for Line Hights, padding and or magrins, learn more at:
+            - https://dev.to/adrianbdesigns/mastering-css-vertical-rhythm-om9
+            - https://www.bounteous.com/insights/2018/03/26/what-font-are-vertical-rhythm-and-modular-scale/
+            - http://vertical-rhythm.crasman.fi/
+    */
+    /* Base Values */
+    --baseline: 1.5;
+    line-height: var(--baseline);
+}
+body
+{
+    font-size:          var(--body-font-size, 1rem);
+    /* background:         var(--background-color, hsl(195, 67%, 98%)); */
+    color:              var(--main-text-color, hsl(251, 6%, 36%));
+    font-family:        var(--body-font-family, 'Rubik');
+    /* Temperary Styles */
+    padding:            calc(var(--baseline) * 3rem); /* temp */
+
+    background-size: calc(var(--baseline) * 1rem) calc(var(--baseline) * 1rem); /* Temp */
+    background-image:
+      linear-gradient(to bottom, hsla(214, 40%, 50%, .5) 1px, transparent 1px); /* Temp */
+}
+svg
+{
+    fill-rule:          evenodd;
+    clip-rule:          evenodd;
+    stroke-linejoin:    round;
+}
+/* ========================================================================= */
+/* Text formating        */
+/* Trying to take into account vertical rythem (read more here: https://24ways.org/2006/compose-to-a-vertical-rhythm/) */
+/* ========================================================================= */
+p {
+    margin-top: calc(var(--baseline) * 1rem);
+    margin-bottom: calc(var(--baseline) * 1rem);
+    background: hsla(100, 40%, 50%, .25); /* Temp */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family:        var(--heading-font-family);
+    background: hsla(300, 40%, 50%, .25); /* Temp */
+}
+h1 {
+    --vertical-rhythm:  calc(var(--baseline) * 2rem);
+    color:              var(--h1-color);
+    font-size:          var(--h1-font-size);
+    font-weight:        300;
+    letter-spacing:     -1.5px;
+    line-height:        var(--vertical-rhythm);
+    margin-top:         var(--vertical-rhythm);
+    margin-bottom:      var(--vertical-rhythm);
+}
+h2 {
+    --vertical-rhythm:  calc(var(--baseline) * 1rem);
+    font-size:          var(--h2-font-size);
+    line-height:        1.5em;
+    font-weight:        300;
+    letter-spacing:     -0.5px;
+    color:              var(--h2-color);
+    line-height:        calc(var(--baseline) * 2rem);
+    margin-top:         var(--vertical-rhythm);
+    margin-bottom:      var(--vertical-rhythm);
+}
+h3 {
+    font-size:          var(--h3-font-size);
+    line-height:        1.5rem;
+    font-weight:        300;
+    color:              var(--h3-color);
+}
+h4 {
+    font-size:          var(--h4-font-size);
+    line-height:        1.5rem;
+    font-weight:        400;
+    letter-spacing:     0.25px;
+    color:              var(--h4-color);
+}
+h5 {
+    font-size:          var(--h5-font-size);
+    line-height:        1.5rem;
+    font-weight:        500;
+    color:              var(--h5-color);
+}
+h6 {
+    font-size:          var(--h6-font-size);   
+    line-height:        1.5rem;
+    font-weight:        500;
+    letter-spacing:     0.15px;
+    color:              var(--h6-color);
+}
+blockquote {
+    padding-left:       2em;
+    border-left:        2px solid black;
+    margin:             1em 0;
+}
+
+li {
+
+}
+
+/* @media (max-width: 800px) {
+    :root {
+        --body-font-size:   1.5rem;
+    }
+} */
+
+.theme-dark{
+    background-color:   var(--main-text-color);
+    --h4-color:         hsla(114, 55%, 70%, 1);
+}

@@ -1,0 +1,79 @@
+:root{
+  --background-color:   hsl(195, 67%, 98%);
+  --main-text-color:    hsl(251, 6%, 36%);
+
+    /*  I'm using Modular scales to calculate sizes of elements around the site.
+        To learn more about Modular Scales:
+            - https:/   /type-scale.com/, 
+            - (Modular Scale & Vertical Rythem) https://www.bounteous.com/insights/2018/03/26/what-font-are-vertical-rhythm-and-modular-scale/
+            - https://www.layoutgridcalculator.com/typographic-scale/
+        Comon modular Scales:
+            1.067;  Minor Second
+            1.125;  Major Second
+            1.2;    Minor Third
+            1.25;   Major Third
+            1.333;  Perfect Fourth
+            1.414;  Augmented Fourth
+            1.5;    Perfect Fith
+            1.618;  Golden Ratio
+    */
+    --modular-scale:               1.125;
+
+    /* Create the scaleing sizes using em units: */
+
+    --scale-40:                 calc(var(--))
+
+/* -------------------------------------------------------------------------- */
+    /* Text Formating */
+    /* -------------------------------------------------------------------------- */
+    --type-size-base:           1em;
+    --body-font-family:         'Rubik';
+    --body-font-size:           1rem; /* Browser 1rem = 16px */
+
+    /* Type Scale calculations based on above --modular-scale */
+    --type-small:               calc(var(--type-size-base) / var(--modular-scale));
+    --type-smaller:             calc(var(--type-small) / var(--modular-scale));
+    --type-smallest:            calc(var(--type-smaller) / var(--modular-scale));
+    --type-normal:              var(--type-size-base);
+    --type-medium:              calc(var(--type-size-base) * var(--modular-scale));
+    --type-large:               calc(var(--type-medium) * var(--modular-scale));
+    --type-larger:              calc(var(--type-large) * var--modular-scale));
+    --type-extralarge:          calc(var(--type-larger) * var(--modular-scale));
+    --type-largest:             calc(var(--type-extralarge) * var(--modular-scale));
+
+    /* ---------------------------------------------------------------------- */
+    /* Headings */
+    /* ---------------------------------------------------------------------- */
+
+    /* Heading sizes are calculated based on the type scale above */
+    --h6-font-size:             1.1em;
+    --h5-font-size:             var(--type-medium);
+    --h4-font-size:             var(--type-large);
+    --h3-font-size:             var(--type-larger);
+    --h2-font-size:             var(--type-extralarge);
+    --h1-font-size:             var(--type-largest);
+
+    --heading-font-family:      'Karla';
+    --heading-padding-top:      1em;
+    --heading-padding-bottom:   1em;
+
+    --h6-color:                 hsla(214, 40%, 50%, 1);
+    --h5-color:                 hsla(214, 50%, 50%, 1);
+    --h4-color:                 hsla(214, 60%, 50%, 1);
+    --h3-color:                 hsla(214, 70%, 45%, 1);
+    --h3-color:                 hsla(214, 80%, 40%, 1);
+    --h2-color:                 hsla(214, 90%, 35%, 1);
+    --h1-color:                 hsla(214, 100%, 30%, 1);
+
+
+    /* so if you want a font size to scale with the window width you do calc(1rem + 1vw)  */
+
+  /* ---- Components ---- */
+
+  /* Panel */
+  --panel-width:                250px;
+  --panel-handle-width:         50px;
+  --panel-tray-padding:         2em;
+  --panel-close-size:           50px;
+  --pannel-close-color:       grey;
+}
