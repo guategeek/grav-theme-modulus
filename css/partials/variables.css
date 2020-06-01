@@ -1,7 +1,7 @@
 :root{
-  --background-color:   hsl(195, 67%, 98%);
-  --main-text-color:    hsl(251, 6%, 36%);
-
+/* ========================================================================== */
+/* Modula Scale & Vertical Rythem */
+/* ========================================================================== */
     /*  I'm using Modular scales to calculate sizes of elements around the site.
         To learn more about Modular Scales:
             - https:/   /type-scale.com/, 
@@ -17,53 +17,75 @@
             1.5;    Perfect Fith
             1.618;  Golden Ratio
     */
-    --modular-scale:               1.125;
+    --modular-scale:            1.125;
+    --scale-base:               1em;
+     /* I'm using Vertical Rythem for Line Hights, padding and or magrins, learn more at:
+        - https://dev.to/adrianbdesigns/mastering-css-vertical-rhythm-om9
+        - https://www.bounteous.com/insights/2018/03/26/what-font-are-vertical-rhythm-and-modular-scale/
+        - http://vertical-rhythm.crasman.fi/
+        - https://8thlight.com/blog/chris-peak/2012/12/30/vertical-rhythm.html
+    
+        The --baseline below becomes one rythem unit
+    */
+    --baseline:                 1.5;
+    /* Create the 10 scaleing sizes using em units: */
+    --scale-40:                 calc(var(--scale-base) / var(--modular-scale));
+    --scale-30:                 calc(var(--scale-40) / var(--modular-scale));
+    --scale-20:                 calc(var(--scale-30) / var(--modular-scale));
+    --scale-10:                 calc(var(--scale-20) / var(--modular-scale));
+    --scale-50:                 var(--scale-base);
+    --scale-60:                 calc(var(--scale-50) * var(--modular-scale));
+    --scale-70:                 calc(var(--scale-60) * var(--modular-scale));
+    --scale-80:                 calc(var(--scale-70) * var(--modular-scale));
+    --scale-90:                 calc(var(--scale-80) * var(--modular-scale));
+    --scale-100:                calc(var(--scale-90) * var(--modular-scale));
 
-    /* Create the scaleing sizes using em units: */
+/* ========================================================================== */
+/* Base Styles */
+/* ========================================================================== */
+    --background-color:       hsl(195, 67%, 98%);
 
-    --scale-40:                 calc(var(--))
-
-/* -------------------------------------------------------------------------- */
-    /* Text Formating */
     /* -------------------------------------------------------------------------- */
-    --type-size-base:           1em;
+    /* Body Text */
+    /* -------------------------------------------------------------------------- */
     --body-font-family:         'Rubik';
     --body-font-size:           1rem; /* Browser 1rem = 16px */
-
-    /* Type Scale calculations based on above --modular-scale */
-    --type-small:               calc(var(--type-size-base) / var(--modular-scale));
-    --type-smaller:             calc(var(--type-small) / var(--modular-scale));
-    --type-smallest:            calc(var(--type-smaller) / var(--modular-scale));
-    --type-normal:              var(--type-size-base);
-    --type-medium:              calc(var(--type-size-base) * var(--modular-scale));
-    --type-large:               calc(var(--type-medium) * var(--modular-scale));
-    --type-larger:              calc(var(--type-large) * var--modular-scale));
-    --type-extralarge:          calc(var(--type-larger) * var(--modular-scale));
-    --type-largest:             calc(var(--type-extralarge) * var(--modular-scale));
+    --main-text-color:        hsl(251, 6%, 36%);
 
     /* ---------------------------------------------------------------------- */
     /* Headings */
     /* ---------------------------------------------------------------------- */
 
     /* Heading sizes are calculated based on the type scale above */
-    --h6-font-size:             1.1em;
-    --h5-font-size:             var(--type-medium);
-    --h4-font-size:             var(--type-large);
-    --h3-font-size:             var(--type-larger);
-    --h2-font-size:             var(--type-extralarge);
-    --h1-font-size:             var(--type-largest);
-
     --heading-font-family:      'Karla';
-    --heading-padding-top:      1em;
-    --heading-padding-bottom:   1em;
+ 
+    --h1-font-size:             var(--scale-100);
+    --h1-font-weight:           300;
+    --h1-letter-spacing:        -1.5px;
+    --h1-color:                 hsla(214, 100%, 30%, 1);
+
+    --h2-font-size:             var(--scale-90);
+    --h2-font-weight:           300;
+    --h2-letter-spacing:        -1.5px;
+    --h2-color:                 hsla(214, 90%, 35%, 1);
+
+    --h6-font-size:             var(--scale-60);
+    --h5-font-size:             var(--scale-60);
+    --h4-font-size:             var(--scale-70);
+    --h3-font-size:             var(--scale-80);
 
     --h6-color:                 hsla(214, 40%, 50%, 1);
     --h5-color:                 hsla(214, 50%, 50%, 1);
     --h4-color:                 hsla(214, 60%, 50%, 1);
     --h3-color:                 hsla(214, 70%, 45%, 1);
     --h3-color:                 hsla(214, 80%, 40%, 1);
-    --h2-color:                 hsla(214, 90%, 35%, 1);
-    --h1-color:                 hsla(214, 100%, 30%, 1);
+
+    /* ---------------------------------------------------------------------- */
+    /* Lists */
+    /* ---------------------------------------------------------------------- */
+    --lists-left-padding:       0;
+    --sublist-left-padding:     var(--scale-70);
+    --listitem-left-padding:    0;
 
 
     /* so if you want a font size to scale with the window width you do calc(1rem + 1vw)  */

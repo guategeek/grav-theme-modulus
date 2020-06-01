@@ -1,26 +1,23 @@
 /* Base Styles */
 :root{
-    /* I'm using Vertical Rythem for Line Hights, padding and or magrins, learn more at:
-            - https://dev.to/adrianbdesigns/mastering-css-vertical-rhythm-om9
-            - https://www.bounteous.com/insights/2018/03/26/what-font-are-vertical-rhythm-and-modular-scale/
-            - http://vertical-rhythm.crasman.fi/
-    */
-    /* Base Values */
-    --baseline: 1.5;
-    line-height: var(--baseline);
+    line-height: var(--baseline, 1.5);
 }
 body
 {
     font-size:          var(--body-font-size, 1rem);
-    /* background:         var(--background-color, hsl(195, 67%, 98%)); */
     color:              var(--main-text-color, hsl(251, 6%, 36%));
     font-family:        var(--body-font-family, 'Rubik');
     /* Temperary Styles */
-    padding:            calc(var(--baseline) * 3rem); /* temp */
+    padding:            calc(var(--baseline) * 1rem); /* temp */
 
-    background-size: calc(var(--baseline) * 1rem) calc(var(--baseline) * 1rem); /* Temp */
+    /* background-size: calc(var(--baseline) * 1rem) calc(var(--baseline) * 1rem);
     background-image:
-      linear-gradient(to bottom, hsla(214, 40%, 50%, .5) 1px, transparent 1px); /* Temp */
+      linear-gradient(to bottom, hsla(214, 40%, 50%, .5) 1px, transparent 1px); */
+}
+@media screen and (max-width: 600px) {
+    :root{
+        --body-font-size: 0.875rem;
+    }
 }
 svg
 {
@@ -32,38 +29,49 @@ svg
 /* Text formating        */
 /* Trying to take into account vertical rythem (read more here: https://24ways.org/2006/compose-to-a-vertical-rhythm/) */
 /* ========================================================================= */
+.text-body{
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
 p {
     margin-top: calc(var(--baseline) * 1rem);
     margin-bottom: calc(var(--baseline) * 1rem);
-    background: hsla(100, 40%, 50%, .25); /* Temp */
+    /* Temp Styles */
+    /* background: hsla(100, 40%, 50%, .25); */
 }
-
+/* -------------------------------------------------------------------------- */
+/* Headings */
+/* -------------------------------------------------------------------------- */
 h1, h2, h3, h4, h5, h6 {
     font-family:        var(--heading-font-family);
-    background: hsla(300, 40%, 50%, .25); /* Temp */
+    /* Temp Styles */
+    /* background: hsla(300, 40%, 50%, .25); */
 }
 h1 {
     --vertical-rhythm:  calc(var(--baseline) * 2rem);
+    --margin-vertical:  calc(var(--baseline) * 1rem);
     color:              var(--h1-color);
     font-size:          var(--h1-font-size);
-    font-weight:        300;
-    letter-spacing:     -1.5px;
+    font-weight:        var(--h1-font-weight, 300);
+    letter-spacing:     var(--h1-letter-spacing, -1.5px);
     line-height:        var(--vertical-rhythm);
-    margin-top:         var(--vertical-rhythm);
-    margin-bottom:      var(--vertical-rhythm);
+    margin-top:         var(--margin-vertical);
+    margin-bottom:      var(--margin-vertical);
 }
 h2 {
-    --vertical-rhythm:  calc(var(--baseline) * 1rem);
+    --vertical-rhythm:  calc(var(--baseline) * 2rem);
+    --margin-vertical:  calc(var(--baseline) * 1rem);
     font-size:          var(--h2-font-size);
-    line-height:        1.5em;
-    font-weight:        300;
-    letter-spacing:     -0.5px;
+    font-weight:        var(--h2-font-weight, 300);
+    letter-spacing:     var(--h2-letter-spacing, -0.5px);
     color:              var(--h2-color);
-    line-height:        calc(var(--baseline) * 2rem);
-    margin-top:         var(--vertical-rhythm);
-    margin-bottom:      var(--vertical-rhythm);
+    line-height:        var(--vertical-rhythm);
+    margin-top:         var(--margin-vertical);
+    margin-bottom:      var(--margin-vertical);
 }
 h3 {
+    --vertical-rhythm:  calc(var(--baseline) * 1rem);
     font-size:          var(--h3-font-size);
     line-height:        1.5rem;
     font-weight:        300;
@@ -89,15 +97,66 @@ h6 {
     letter-spacing:     0.15px;
     color:              var(--h6-color);
 }
+/* -------------------------------------------------------------------------- */
+/* Quotes */
+/* -------------------------------------------------------------------------- */
 blockquote {
     padding-left:       2em;
     border-left:        2px solid black;
     margin:             1em 0;
 }
-
-li {
-
+blockquote:before {
+    content:            "\201C";
+    float:              left;
+    font-size:          3em;
+    margin:             -10px 2px -60px 0px;
 }
+blockquote:after{
+    content:            "\201D";
+    display:            inline-block;
+    font-size:          3em;
+    height:             1px;
+    line-height:        .45em;
+    margin-left:        3px;
+}
+/* -------------------------------------------------------------------------- */
+/* Lists */
+/* -------------------------------------------------------------------------- */
+ul, ol {
+    --margin-vertical:  calc(var(--baseline) * 1rem);
+    padding-left:       var(--lists-left-padding);
+    margin-top:         var(--margin-vertical);
+    margin-bottom:      var(--margin-vertical);
+    /* list-style-position: inside; */
+    /* Temp Styles */
+    background-color: hsla(10, 50%, 50%, .1);
+}
+ul {
+    list-style-type:    disc;
+}
+ul ul {
+    --lists-left-padding: var(--sublist-left-padding);
+    --margin-vertical:  0;
+    list-style-type:    circle;
+}
+ol {
+    list-style-type:         decimal;
+}
+ol ol {
+    --lists-left-padding: var(--sublist-left-padding);
+    --margin-vertical:  0;
+}
+li {
+    padding-left:       var(--listitem-left-padding);
+    /* Temp Styles */
+    background-color: hsla(300, 50%, 50%, .1);
+}
+
+
+/* ========================================================================== */
+/* Testing Junk */
+/* ========================================================================== */
+
 
 /* @media (max-width: 800px) {
     :root {

@@ -10,7 +10,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include 'partials/metadata.html.twig' %}
 
-    <link rel="icon" type="image/png" href="{{ url('theme://dist/images/logo.png') }}" />
+    {# <link rel="icon" href="data:image/svg+xml,<svg width=%22100%%22 height=%22100%%22 viewBox=%220 0 16 16%22 style=%22fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;%22><path d=%22M5.304,8.581L6.009,9.286L7.435,7.86L9.399,9.824C8.785,11.462 6.648,12.839 4.905,12.498C2.883,12.103 1.295,9.915 1.852,7.88C2.267,6.365 3.729,5.07 4.869,4.15C5.671,3.502 7.042,2.716 8.27,2.335C10.494,1.646 11.694,1.622 12.86,1.828C14.25,2.072 15.476,3.371 14.196,4.504C12.959,5.597 10.992,5.473 9.508,5.507C9.508,5.507 8.295,5.591 7.909,5.976C8.008,6.075 11.044,9.11 11.044,9.11C11.107,8.952 11.17,8.793 11.216,8.629C11.256,8.488 11.353,8.128 11.214,7.972C10.69,7.387 10.118,6.845 9.547,6.305C9.533,6.292 9.541,6.288 9.564,6.288L10.332,6.297C11.909,6.251 13.733,6.245 14.958,5.082C15.156,4.893 15.323,4.664 15.446,4.419C16.309,2.704 14.713,1.243 12.982,1.026C11.782,0.876 10.319,0.866 8.095,1.552C6.753,1.965 5.467,2.581 4.324,3.381C3.297,4.099 2.386,4.967 1.652,5.971C0.844,7.079 0.368,8.458 0.589,9.837C0.944,12.043 3.132,13.982 5.409,13.834C7.866,13.661 9.897,11.446 10.901,9.363L7.712,6.173L5.304,8.581Z%22 style=%22fill:#2ce9c0;%22/></svg>"> #}
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>🧠</text></svg>">
     <link rel="canonical" href="{{ page.url(true, true) }}" />
 
     {% block stylesheets %}
@@ -50,7 +51,7 @@
 
 {% block body %}
     <section id="body">
-        <div class="wrapper padding">
+        <div class="text-body">
         {% block content %}{% endblock %}
         </div>
     </section>
