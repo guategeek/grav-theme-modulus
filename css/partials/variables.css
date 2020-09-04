@@ -25,9 +25,13 @@
         - http://vertical-rhythm.crasman.fi/
         - https://8thlight.com/blog/chris-peak/2012/12/30/vertical-rhythm.html
     
-        The --baseline below becomes one rythem unit
+        This CSS only aproach is not realy true Vertical Rythem to do a more legit aproach used JS:
+        https://medium.com/cete/vertical-rhythm-and-font-baselines-with-styled-components-5b99b40050f0
+
+        The --baseline below multiplied by 1rem becomes a Rythem unit (ru)
+        If you want more space between an element set a higher (ru) like 2rem or 3rem
     */
-    --baseline:                 1.5;
+    --baseline:                 1.6;
     /* Create the 10 scaleing sizes using em units: */
     --scale-40:                 calc(var(--scale-base) / var(--modular-scale));
     --scale-30:                 calc(var(--scale-40) / var(--modular-scale));
@@ -48,7 +52,7 @@
     /* -------------------------------------------------------------------------- */
     /* Body Text */
     /* -------------------------------------------------------------------------- */
-    --body-font-family:         'Rubik';
+    --body-font-family:         'M PLUS 1p'; /* Was Rubik */
     --body-font-size:           1rem; /* Browser 1rem = 16px */
     --main-text-color:        hsl(251, 6%, 36%);
 
@@ -57,32 +61,56 @@
     /* ---------------------------------------------------------------------- */
 
     /* Heading sizes are calculated based on the type scale above */
+    /* Heading spacing is based on (ru) values as whole rem units */
     --heading-font-family:      'Karla';
  
     --h1-font-size:             var(--scale-100);
     --h1-font-weight:           300;
     --h1-letter-spacing:        -1.5px;
-    --h1-color:                 hsla(214, 100%, 30%, 1);
+    --h1-line-height-ru:        2rem;
+    --h1-margins-v-ru:          1rem;
+    --h1-color:                 hsla(214, 90%, 30%, 1);
 
     --h2-font-size:             var(--scale-90);
     --h2-font-weight:           300;
-    --h2-letter-spacing:        -1.5px;
-    --h2-color:                 hsla(214, 90%, 35%, 1);
+    --h2-letter-spacing:        -0.5px;
+    --h2-line-height-ru:        1rem;
+    --h2-margins-v-ru:          1rem;
+    --h2-color:                 hsla(214, 80%, 35%, 1);
+
+    --h3-font-size:             var(--scale-80);
+    --h3-font-weight:           300;
+    --h3-letter-spacing:        normal;
+    --h3-line-height-ru:        1rem;
+    --h3-margins-v-ru:          1rem;
+    --h3-color:                 hsla(214, 70%, 45%, 1);
+
+    --h4-font-size:             var(--scale-70);
+    --h4-font-weight:           400;
+    --h4-letter-spacing:        0.25px;
+    --h4-line-height-ru:        1rem;
+    --h4-margins-v-ru:          1rem;
+    --h4-color:                 hsla(214, 60%, 50%, 1);
+
+    --h5-font-size:             var(--scale-60);
+    --h5-font-weight:           500;
+    --h5-letter-spacing:        normal;
+    --h5-line-height-ru:        1rem;
+    --h5-margins-v-ru:          1rem;
+    --h5-color:                 hsla(214, 50%, 50%, 1);
 
     --h6-font-size:             var(--scale-60);
-    --h5-font-size:             var(--scale-60);
-    --h4-font-size:             var(--scale-70);
-    --h3-font-size:             var(--scale-80);
-
+    --h6-font-weight:           500;
+    --h6-letter-spacing:        0.15px;
+    --h6-line-height-ru:        1rem;
+    --h6-margins-v-ru:          1rem;
     --h6-color:                 hsla(214, 40%, 50%, 1);
-    --h5-color:                 hsla(214, 50%, 50%, 1);
-    --h4-color:                 hsla(214, 60%, 50%, 1);
-    --h3-color:                 hsla(214, 70%, 45%, 1);
-    --h3-color:                 hsla(214, 80%, 40%, 1);
+
 
     /* ---------------------------------------------------------------------- */
     /* Lists */
     /* ---------------------------------------------------------------------- */
+    --lists-margins-v-ru:       1rem;
     --lists-left-padding:       0;
     --sublist-left-padding:     var(--scale-70);
     --listitem-left-padding:    0;

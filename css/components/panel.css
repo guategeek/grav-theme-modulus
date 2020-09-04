@@ -1,43 +1,26 @@
-/* Variables you can set
-
---panel-width: 250px; // How wide will the inside portion of the pannel be?
---panel-handle-width: 50px; // How wide will the in page nav be?
---panel-tray-padding: 2em;
---panel-close-size: 50px; // Size of the "Close Nav" button inside the pannel
---panel-close-color: $gray-dark; // Color of the "Close Nav" text inside pannel
-// In Page Nav (uses bookmark class on items)
---panel-bookmark-height: 50px; // How tall is each in page nav item?
---panel-bookmark-items: 6; // The max number of bookmark items
-// Handle Highlight goes in page under the inpage nav
---pannel-highlight-size: 5px; // The triangle will be twice this size.
---pannel-highlight-color: $green-mid; // THe triangle will be this color.
---panel-highlight-background: lighten($off-black, 5%);
---panel-highlight-baseoffset: 15px; // I want the arrow to line up with the divider element
-*/
-
-
 body {
   position: relative;
   right: 0px;
   overflow-x: hidden;
   transition: right 0.3s ease-in-out;
 }
+
 body.is-panel-open{
-  right: calc(- var(--panel-width, 250px));
+  right: calc(-1 * var(--panel-width));
 }
 
 .panel {
   height: 100vh;
-  width: 0;
+  width: var(--panel-width);
   position: fixed;
-  left:  0;
+  left:  calc(-1 * var(--panel-width));
   top: 0;
   overflow-x: hidden;
   transition: left 0.3s ease-in-out;
   z-index: 10;
   background: orange;
 }
-.panel.panel_is-open{
+.panel.is-open{
   left: 0px;
 }
 .panel p {

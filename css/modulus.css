@@ -2,7 +2,7 @@
 @import "partials/variables.css";
 @import "partials/fonts.css";
 /* If you are using a theme to change the look load it here */
-
+@import "themes/guategeek.css";
 
 /* Base theme styles are imported here  */
 @import "partials/baseStyles.css";

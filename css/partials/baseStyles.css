@@ -26,17 +26,17 @@ svg
     stroke-linejoin:    round;
 }
 /* ========================================================================= */
-/* Text formating        */
-/* Trying to take into account vertical rythem (read more here: https://24ways.org/2006/compose-to-a-vertical-rhythm/) */
+/* Typography! */
+/* Vertical Rythem & Modular Scale at play */
 /* ========================================================================= */
 .text-body{
-    width: 100%;
-    max-width: 600px;
-    margin: auto;
+    width:              100%;
+    max-width:          600px; /* To get ideal line lengths on my current Typography */
+    margin:             auto;
 }
 p {
-    margin-top: calc(var(--baseline) * 1rem);
-    margin-bottom: calc(var(--baseline) * 1rem);
+    margin-top:         calc(var(--baseline) * 1rem);
+    margin-bottom:      calc(var(--baseline) * 1rem);
     /* Temp Styles */
     /* background: hsla(100, 40%, 50%, .25); */
 }
@@ -49,53 +49,64 @@ h1, h2, h3, h4, h5, h6 {
     /* background: hsla(300, 40%, 50%, .25); */
 }
 h1 {
-    --vertical-rhythm:  calc(var(--baseline) * 2rem);
-    --margin-vertical:  calc(var(--baseline) * 1rem);
-    color:              var(--h1-color);
+    --margins-v:        calc(var(--baseline) * var(--h1-margins-v-ru, 1rem));
+    color:              var(--h1-color, #000);
     font-size:          var(--h1-font-size);
     font-weight:        var(--h1-font-weight, 300);
     letter-spacing:     var(--h1-letter-spacing, -1.5px);
-    line-height:        var(--vertical-rhythm);
-    margin-top:         var(--margin-vertical);
-    margin-bottom:      var(--margin-vertical);
+    line-height:        calc(var(--baseline) * var(--h1-line-height-ru, 2rem));
+    margin-top:         var(--margins-v);
+    margin-bottom:      var(--margins-v);
 }
 h2 {
-    --vertical-rhythm:  calc(var(--baseline) * 2rem);
-    --margin-vertical:  calc(var(--baseline) * 1rem);
+    --margins-v:        calc(var(--baseline) * var(--h2-margins-v-ru, 1rem));
+    color:              var(--h2-color, #000);
     font-size:          var(--h2-font-size);
     font-weight:        var(--h2-font-weight, 300);
     letter-spacing:     var(--h2-letter-spacing, -0.5px);
-    color:              var(--h2-color);
-    line-height:        var(--vertical-rhythm);
-    margin-top:         var(--margin-vertical);
-    margin-bottom:      var(--margin-vertical);
+    line-height:        calc(var(--baseline) * var(--h2-line-height-ru, 2rem));
+    margin-top:         var(--margins-v);
+    margin-bottom:      var(--margins-v);
 }
 h3 {
-    --vertical-rhythm:  calc(var(--baseline) * 1rem);
+    --margins-v:        calc(var(--baseline) * var(--h3-margins-v-ru, 1rem));
+    color:              var(--h3-color, #000);
     font-size:          var(--h3-font-size);
-    line-height:        1.5rem;
-    font-weight:        300;
-    color:              var(--h3-color);
+    font-weight:        var(--h3-font-weight, 300);
+    letter-spacing:     var(--h3-letter-spacing, normal);
+    line-height:        calc(var(--baseline) * var(--h3-line-height-ru, 1rem));
+    margin-top:         var(--margins-v);
+    margin-bottom:      var(--margins-v);
 }
 h4 {
+    --margins-v:        calc(var(--baseline) * var(--h4-margins-v-ru, 1rem));
+    color:              var(--h4-color, #000);
     font-size:          var(--h4-font-size);
-    line-height:        1.5rem;
-    font-weight:        400;
-    letter-spacing:     0.25px;
-    color:              var(--h4-color);
+    font-weight:        var(--h4-font-weight, 300);
+    letter-spacing:     var(--h4-letter-spacing, normal);
+    line-height:        calc(var(--baseline) * var(--h4-line-height-ru, 1rem));
+    margin-top:         var(--margins-v);
+    margin-bottom:      var(--margins-v);
 }
 h5 {
+    --margins-v:        calc(var(--baseline) * var(--h5-margins-v-ru, 1rem));
+    color:              var(--h5-color, #000);
     font-size:          var(--h5-font-size);
-    line-height:        1.5rem;
-    font-weight:        500;
-    color:              var(--h5-color);
+    font-weight:        var(--h5-font-weight, 300);
+    letter-spacing:     var(--h5-letter-spacing, normal);
+    line-height:        calc(var(--baseline) * var(--h5-line-height-ru, 1rem));
+    margin-top:         var(--margins-v);
+    margin-bottom:      var(--margins-v);
 }
 h6 {
-    font-size:          var(--h6-font-size);   
-    line-height:        1.5rem;
-    font-weight:        500;
-    letter-spacing:     0.15px;
-    color:              var(--h6-color);
+    --margins-v:        calc(var(--baseline) * var(--h6-margins-v-ru, 1rem));
+    color:              var(--h6-color, #000);
+    font-size:          var(--h6-font-size);
+    font-weight:        var(--h6-font-weight, 500);
+    letter-spacing:     var(--h6-letter-spacing, normal);
+    line-height:        calc(var(--baseline) * var(--h6-line-height-ru, 1rem));
+    margin-top:         var(--margins-v);
+    margin-bottom:      var(--margins-v);
 }
 /* -------------------------------------------------------------------------- */
 /* Quotes */
@@ -123,13 +134,13 @@ blockquote:after{
 /* Lists */
 /* -------------------------------------------------------------------------- */
 ul, ol {
-    --margin-vertical:  calc(var(--baseline) * 1rem);
+    --margins-v:  calc(var(--baseline) * var(--lists-margins-v-ru));
     padding-left:       var(--lists-left-padding);
-    margin-top:         var(--margin-vertical);
-    margin-bottom:      var(--margin-vertical);
+    margin-top:         var(--margins-v);
+    margin-bottom:      var(--margins-v);
     /* list-style-position: inside; */
     /* Temp Styles */
-    background-color: hsla(10, 50%, 50%, .1);
+    /* background-color: hsla(10, 50%, 50%, .1); */
 }
 ul {
     list-style-type:    disc;
@@ -149,7 +160,7 @@ ol ol {
 li {
     padding-left:       var(--listitem-left-padding);
     /* Temp Styles */
-    background-color: hsla(300, 50%, 50%, .1);
+    /* background-color: hsla(300, 50%, 50%, .1); */
 }
 
 

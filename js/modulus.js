@@ -1,13 +1,19 @@
 
+// Panel module logic
+function togglePanel() {
+    document.getElementById("navPanel").classList.toggle('is-open');
+    document.body.classList.toggle('is-panel-open');
+
+}
 
 // Run the Panel on page load.
-window.onload = function () {
-  panelComponent.panelComponent ();
-};
-// Panel module logic
-function panelComponent() {
-  let menuToggle = document.querySelector('[data-js="panel-toggle"]');
-  let panel = document.querySelector('[data-js="panel"]');
+//window.onload = hiddenPanel();
+
+
+/* This was the old function (that works on Ethnoma) can't get it to do a ruttn thing here
+
+  let menuToggle = document.querySelector('[data-js="panel-toggle"]')
+  let panel = document.querySelector('[data-js="panel"]')
   let aria = panel.getAttribute("aria-expanded");
   menuToggle.addEventListener('click', function () {
       document.body.classList.toggle('is-panel-open');
@@ -36,4 +42,6 @@ function panelComponent() {
       }
       panel.setAttribute("aria-expanded", aria);
   });
-}
+
+
+*/
