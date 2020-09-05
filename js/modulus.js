@@ -1,47 +1,18 @@
-
-// Panel module logic
+// Panel Toggle
 function togglePanel() {
-    document.getElementById("navPanel").classList.toggle('is-open');
-    document.body.classList.toggle('is-panel-open');
+    const panel = document.getElementById("navPanel");
+    const toggle = document.getElementById("navPanelToggle");
+    let aria = toggle.getAttribute("aria-expanded");
+
+    panel.classList.toggle('is-open'); // opens and closes panel
+    toggle.classList.toggle('is-active'); // Make hamburguer Menu Animate into an X
+    document.body.classList.toggle('is-panel-open'); // If I want the page to slide over for panel
+    if (aria == "true") {
+        aria = "false";
+    }
+    else {
+        aria = "true";
+    }
+    toggle.setAttribute("aria-expanded", aria);
 
 }
-
-// Run the Panel on page load.
-//window.onload = hiddenPanel();
-
-
-/* This was the old function (that works on Ethnoma) can't get it to do a ruttn thing here
-
-  let menuToggle = document.querySelector('[data-js="panel-toggle"]')
-  let panel = document.querySelector('[data-js="panel"]')
-  let aria = panel.getAttribute("aria-expanded");
-  menuToggle.addEventListener('click', function () {
-      document.body.classList.toggle('is-panel-open');
-      panel.classList.toggle('is-open');
-      menuToggle.classList.toggle('is-active');
-      // Let screen readers know menu is open or closed
-      if (aria == "true") {
-          aria = "false";
-      }
-      else {
-          aria = "true";
-      }
-      panel.setAttribute("aria-expanded", aria);
-  });
-  let closePanel = document.querySelector('[data-js="panel-close"]');
-  closePanel.addEventListener('click', function () {
-      document.body.classList.remove('is-panel-open');
-      panel.classList.remove('is-open');
-      menuToggle.classList.remove('is-active');
-      // Let screen readers know menu is open or closed
-      if (aria == "true") {
-          aria = "false";
-      }
-      else {
-          aria = "true";
-      }
-      panel.setAttribute("aria-expanded", aria);
-  });
-
-
-*/
