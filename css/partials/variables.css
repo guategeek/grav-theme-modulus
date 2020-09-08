@@ -126,4 +126,11 @@
     --panel-background:         rgb(43, 43, 43);
     --panel-open-color:         purple;
     --panel-close-color:        orange;
+
+    /* ---------------------------------------------------------------------- */
+    /* Languages */
+    /* ---------------------------------------------------------------------- */
+    --languages-toggle-color:           grey;
+    --languages-toggle-hover-color:     white;
+
 }

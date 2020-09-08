@@ -1,28 +1,66 @@
+/*
+    Variables you can set
+    --languages-toggle-color:   grey;
+    --languages-toggle-hover-color:   white;
+*/
 .languages {
+    width: 25px;
+    height: 24px;
+    margin: 15px;
+    position: relative;
+}
+.languages ul {
+    margin: 0;
+}
+.languages li {
+    display: block;
+    transition-duration: 0.5s;
+    fill: var(--languages-toggle-color, grey);
+}
+.languages li:hover{
+    cursor: pointer;
+    fill: var(--languages-toggle-hover-color, white);
+}
+.languages ul li ul {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+    position: absolute;
+    transition: all 0.5s ease;
+    top: 15px;
+    background: blue;
+}
+.languages ul li:hover > ul, ul li ul:hover {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+.languages ul li ul li {
+    clear: both;
+    width: 100%;
+}
+
+.languages__toggle{
+    position: absolute;
+    z-index: 12;
+}
+.i_lang{
     
 }
 
-
-
 .langswitcher {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -o-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    margin-left: 1rem !important;
-    display: inline-block;
+    margin: 0;
+    padding: 1em;
+    z-index: 11;
 }
 
 .langswitcher li {
-    display: inline-block;
-    margin-left: 0.5rem;
-    line-height: 1rem;
+    /* display: inline-block; */
+    /* margin-top: 0.5rem;
+    line-height: 1rem; */
 }
 
 .langswitcher .active {
-    font-weight: bold;
-    text-decoration: underline;
+    /* font-weight: bold;
+    text-decoration: underline; */
 }

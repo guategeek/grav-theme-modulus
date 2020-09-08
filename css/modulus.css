@@ -8,6 +8,7 @@
 @import "partials/baseStyles.css";
 /* Components are loaded here, coment out any component you don't want */
 @import "components/panel.css";
+@import "components/languages.css";
 
 
 

@@ -6,6 +6,9 @@
     --panel-color:                white;
     --panel-open-color:           blue;
     --panel-close-color:          orange;
+    --panel-border-size:        1px;
+    --panel-border-type:        solid;
+    --panel-border-color:       black;
 */
 body {
     overflow-x:                 hidden;
@@ -15,7 +18,7 @@ body {
     position:                   fixed;
     top:                        0;
     right:                      0;
-    z-index:                    11;
+    z-index:                    20;
     }
 
 .panel {
@@ -41,8 +44,8 @@ body {
     top:                        0px;
     left:                       0px;
     /* background: var(--off-black, black); */
-    padding:                    var(--panel-close-size, 60px) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em);
-    border-left:                1px solid var(--off-black, black);
+    /* padding:                    var(--panel-close-size, 60px) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em); */
+    border-left:                var(--panel-border-size, 1px) var(--panel-border-type, solid) var(--panel-border-color, black);
     overflow-y:                 scroll;
     -ms-overflow-style:         none;
     scrollbar-width:            none;
@@ -50,6 +53,9 @@ body {
     .panel__tray::-webkit-scrollbar {
         display:                none;
     }
+.panel__tray__header {
+    height:                     60px;
+}
 /* Hamburgers - Jonathan Suh @jonsuh - https://github.com/jonsuh/hamburgers */
 .hamburger {
     padding:                    15px 15px;

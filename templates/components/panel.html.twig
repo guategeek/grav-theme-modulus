@@ -9,16 +9,16 @@
 
 
 <div id="navPanel" class="panel">
-    <div class="panel__header">
-        {% include 'components/languages.html.twig' %}
-    </div>
     <div class="panel__tray">
+        <div class="panel__tray__header">
+            {% if langswitcher %}{% include 'components/languages.html.twig' %}{% endif %}
+        </div>
         <nav>
             {% include 'partials/navigation.html.twig' %}
         </nav>
 
         <div class="footnote">
-            <p>Learn about any of our ministry partners by selecting them from above.</p>
+            <p>© Jeff McArthur 2020</p>
         </div>
 
     </div>
