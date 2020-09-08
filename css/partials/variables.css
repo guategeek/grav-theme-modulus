@@ -115,12 +115,15 @@
     --sublist-left-padding:     var(--scale-70);
     --listitem-left-padding:    0;
 
-
-    /* so if you want a font size to scale with the window width you do calc(1rem + 1vw)  */
-
-  /* ---- Components ---- */
-
-  /* Panel */
-  --panel-width:                250px;
-  --panel-tray-padding:         2em;
+/* ========================================================================== */
+/* Components */
+/* ========================================================================== */
+    /* ---------------------------------------------------------------------- */
+    /* Panel */
+    /* ---------------------------------------------------------------------- */
+    --panel-width:              250px;
+    --panel-tray-padding:       2em;
+    --panel-background:         rgb(43, 43, 43);
+    --panel-open-color:         blue;
+    --panel-close-color:        orange;
 }

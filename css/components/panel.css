@@ -2,106 +2,76 @@
   Variables you can set
   --panel-width:                250px;
   --panel-tray-padding:         2em;
+  --panel-background:           grey;
+  --panel-color:                white;
+  --panel-toggle-color:       orange;
 */
 body {
-  position: relative;
-  right: 0px;
-  overflow-x: hidden;
-  transition: right 0.3s ease-in-out;
-}
-body.is-panel-open{
-  right: calc(-1 * var(--panel-width, 250px));
-}
+    overflow-x:         hidden;
+    }
 
 .navPanelToggle {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 11;
-}
+    position:           fixed;
+    top:                0;
+    right:              0;
+    z-index:            11;
+    }
 
 .panel {
-  height: 100vh;
-  width: var(--panel-width);
-  position: fixed;
-  left:  calc(-1 * var(--panel-width, 250px));
-  top: 0;
-  overflow-x: hidden;
-  transition: left 0.3s ease-in-out;
-  z-index: 10;
-  background: orange;
-}
-.panel.is-open{
-  left: 0px;
-}
-.panel p {
-  padding: 1em;
-  color: rgb(242, 242, 243);
-}
+    width:              var(--panel-width);
+    height:             100vh;
+    position:           fixed;
+    top:                0;
+    right:              calc(-1 * var(--panel-width, 250px));
+    overflow-x:         hidden;
+    transition:         right 0.3s ease-in-out;
+    z-index:            10;
+    background:         var(--panel-background, grey);
+    color:              var(--panel-color, white);
+    }
+    .panel.is-open{
+        right:          0px;
+    }
 
-.panel__handle {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  width: var(--panel-handle-width, 50px);
-  min-height: 50px;
-  /* 
-  Rather than setting a background here (easy)
-  I have set it to handle-highlight below, which lives in the page with sticky nav indicators
-  */
-}
 .panel__tray {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: var(--panel-width, 250px);
-  height: 100vh;
-  /* background: var(--off-black, black); */
-  padding: var(--panel-close-size, 50px) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em);
-  border-right: 1px solid var(--off-black, black);
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-.panel__tray::-webkit-scrollbar {
-    display: none;
-}
-/* Temporary Hamgerger placement */
-.hamburger-box2 {
-  width: 50px;
-  height: 50px;
-  background: blue;
-}
-
-/*!
- * Hamburgers
- * @description Tasty CSS-animated hamburgers
- * @author Jonathan Suh @jonsuh
- * @site https://jonsuh.com/hamburgers
- * @link https://github.com/jonsuh/hamburgers
- */
- .hamburger {
-    padding: 15px 15px;
-    display: inline-block;
-    cursor: pointer;
+    width:              var(--panel-width, 250px);
+    height:             100vh;
+    position:           absolute;
+    top:                0px;
+    left:               0px;
+    /* background: var(--off-black, black); */
+    padding:            var(--panel-close-size, 45px) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em) var(--panel-tray-padding, 2em);
+    border-left:        1px solid var(--off-black, black);
+    overflow-y:         scroll;
+    -ms-overflow-style: none;
+    scrollbar-width:    none;
+    }
+    .panel__tray::-webkit-scrollbar {
+        display:        none;
+    }
+/* Hamburgers - Jonathan Suh @jonsuh - https://github.com/jonsuh/hamburgers */
+.hamburger {
+    padding:            15px 15px;
+    display:            inline-block;
+    cursor:             pointer;
     transition-property: opacity, filter;
     transition-duration: 0.15s;
     transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    overflow: visible; }
+    font:               inherit;
+    color:              inherit;
+    text-transform:     none;
+    background-color:   transparent;
+    border:             0;
+    margin:             0;
+    overflow:           visible; }
     .hamburger:hover {
-      opacity: 0.7; }
+      opacity:          0.7; }
     .hamburger.is-active:hover {
-      opacity: 0.7; }
+      opacity:          0.7; }
     .hamburger.is-active .hamburger-inner,
     .hamburger.is-active .hamburger-inner::before,
     .hamburger.is-active .hamburger-inner::after {
-      background-color: #000; }
+      background-color: var(--panel-close-color, orange); }
   
   .hamburger-box {
     width: 40px;
@@ -116,7 +86,7 @@ body.is-panel-open{
     .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
       width: 40px;
       height: 4px;
-      background-color: #000;
+      background-color: var(--panel-open-color, black);
       border-radius: 4px;
       position: absolute;
       transition-property: transform;
